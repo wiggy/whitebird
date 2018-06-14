@@ -1,0 +1,131 @@
+<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <div class="row">
+                            <div class="right_bar">
+                                
+                                <!-- start une PDF -->
+                                <div class="single_leftbar wow fadeInDown">
+                                    <h2><span>Le journal en PDF</span></h2>
+                                    <div class="singleleft_inner">
+                                         <BOUCLE_pdf(DOCUMENTS) {id_rubrique=1} {par date} {inverse} {0,1}>
+
+                                            <a href="#URL_DOCUMENT">[(#LOGO_DOCUMENT|image_reduire{262,*})]</a>
+
+                                            </BOUCLE_pdf>
+                                    </div>
+                                </div>
+                                <!-- End une PDF -->
+                                
+                                <!-- start Popular Post -->
+                                <div class="single_leftbar wow fadeInDown">
+                                    <h2><span>Les plus populaires</span></h2>
+                                    <div class="singleleft_inner">
+                                        <ul class="catg3_snav ppost_nav wow fadeInDown">
+
+
+                                            <BOUCLE_pop(ARTICLES) {id_rubrique =1 } {par popularite} {inverse} {0,5}>
+
+                                                <li>
+                                                    <div class="media">
+                                                        <a href="#URL_ARTICLE" class="media-left">
+                          [(#LOGO_ARTICLE_RUBRIQUE|image_reduire{*,70}||image_recadre{70,70,top})]
+                        </a>
+                                                        <div class="media-body">
+                                                            <a href="#URL_ARTICLE" class="catg_title"> [(#TITRE)]</a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                </BOUCLE_pop>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- End Popular Post -->
+
+                                <!-- start right bar add -->
+                                <div class="single_leftbar wow fadeInDown">
+                                    <h2><span>Publicité</span></h2>
+                                    <div class="singleleft_inner">
+
+
+                                        <BOUCLE_aside(ARTICLES) {id_mot=12} {par date} {inverse} {0,1}>
+
+                                            <a href="#URL_SITE">[(#LOGO_ARTICLE|image_reduire{262,*}||image_recadre{262,218,top})]</a>
+
+                                            </BOUCLE_aside>
+
+                                    </div>
+                                </div>
+                                <!-- End right bar add -->
+
+
+
+                                <!-- start Labels -->
+                                <div class="single_leftbar wow fadeInDown">
+                                    <h2><span>Mots-clés</span></h2>
+                                    <div class="singleleft_inner">
+                                        <ul class="label_nav">
+
+
+                                            <BOUCLE_mots1(MOTS) {id_mot < 8} {par num titre}>
+
+                                                <li[ class="(#EXPOSE)" ]><a href="#URL_MOT">#TITRE</a></li>
+
+                                                    </BOUCLE_mots1>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- End Labels -->
+
+                                <!-- start Labels -->
+                                <div class="single_leftbar wow fadeInDown">
+                                    <h2><span>Statistiques</span></h2>
+                                    <div class="singleleft_inner">
+                                        <ul class="label_nav">
+
+                                            <li><strong><INCLURE{fond=inc-visiteurs}></strong></li>
+
+                                            <li>Nombre total de visites :
+                                                <?php
+$query = "SELECT SUM(visites) AS total_absolu FROM spip_visites";
+	$result = spip_query($query);
+ 
+	if ($row = spip_fetch_array($result)) {
+		$total_absolu = $row['total_absolu'];
+	}
+ 
+ 
+$query = "SELECT COUNT(DISTINCT ip) AS visites FROM spip_visites_temp";
+		$result = spip_query($query);
+ 
+	if ($row = @spip_fetch_array($result)) {
+		$visites_today = $row['visites'];
+}
+ 
+$total_gen = $total_absolu + $visites_today;
+ 
+echo "<strong>".$total_gen."</strong>";
+ 
+?></li>
+                                            <li>Nombre d'articles sur le site :
+
+                                                <B_compteur>
+                                                    <strong>#TOTAL_BOUCLE</strong>
+                                                    <BOUCLE_compteur(ARTICLES) {id_rubrique=1 }>
+
+                                                        </BOUCLE_compteur>
+                                                </B_compteur>
+                                            </li>
+
+
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- End Labels -->
+
+                            </div>
+                        </div>
+                    </div>

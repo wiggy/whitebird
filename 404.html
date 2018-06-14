@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    [<meta name="description" content="(#DESCRIPTIF_SITE_SPIP|couper{150}|attribut_html)" />]
+    <title>Page inexistante - La Colombe du Jour</title>
+    <INCLURE{fond=inclure/head} />
+ 
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  <!-- =========================
+    //////////////This Theme Design and Developed //////////////////////
+    //////////// by www.wpfreeware.com======================-->
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+  <!-- End Preloader -->
+   
+  <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+  
+  <div class="container">
+    <div class="box_wrapper">
+      <!-- ==================start header=============== -->
+      <header id="header">     
+        <!-- start header top area -->
+        <div class="header_top">
+            <!-- Static navbar -->
+           <INCLURE{fond=inclure/nav,env} />
+         <div class="header_search">
+          <button id="searchIcon"><i class="fa fa-search"></i></button>
+           <!-- <a id="searchIcon" href="#"><i class="fa fa-search"></i></a> -->
+          <div id="shide">
+            <div id="search-hide">
+              <form action="spip.php?page=recherche" method="get">
+                <input name="page" value="recherche" type="hidden"
+/>
+              <input type="text" size="40" placeholder="Votre recherche ..." name="recherche">
+              </form>
+              <button class="remove"><span><i class="fa fa-times"></i></span></button>
+            </div>
+          </div>
+         </div>
+        </div>
+        <!-- End header top area -->
+
+        <!-- start header bottom area -->
+        <div class="header_bottom">
+          <div class="logo_area">
+
+          <!-- for your text logo -->
+            <a class="logo" href="#URL_SITE_SPIP">
+           [(#LOGO_SITE_SPIP|image_reduire{443,90})]
+          </a>
+            <h5>[(#SLOGAN_SITE_SPIP|textebrut)]</h5>
+          </div>
+          <div class="top_addarea">
+            <BOUCLE_banner(ARTICLES) {id_mot=10} {par date} {inverse} {0,1}>
+
+                  <a href="#URL_SITE">[(#LOGO_ARTICLE|image_reduire{728,*}||image_recadre{728,90,top})]</a>
+
+                  </BOUCLE_banner>
+          </div>
+        </div>
+        <!-- start header top area -->     
+      </header>    
+      <!-- ==================End header=============== -->
+      <!-- start news sticker -->
+      <div class="latest_newsarea">      
+        <span>Derniers articles</span>
+        <ul id="ticker01" class="news_sticker">
+        <BOUCLE_derniers(ARTICLES) {id_rubrique = 1} {par date} {inverse} {0,9}> 
+          <li><a href="#URL_ARTICLE">[(#TITRE|couper{50})]</a></li>
+        </BOUCLE_derniers>      
+        </ul>    
+      </div>
+    <!-- End news sticker -->
+  <!-- =========================
+        //////////////This Theme Design and Developed //////////////////////
+        //////////// by www.wpfreeware.com======================-->
+
+  <!-- ==================start content body section=============== -->
+  <section id="errorpage_body">
+    <div class="row">
+    <!-- start left bar content -->
+      <div class="col-lg-12 col-md-12 col-sm-12">
+       
+          <div class="errorpage_area">
+           <div class="error-title"><span>404</span></div>
+          <div class="error_content">
+            <p><i class="fa fa-hand-o-right "></i> Désolé, cette page n'existe pas sur notre site.</p>
+            <a href="#URL_SITE_SPIP">Accueil</a>
+          </div>        
+        </div>
+      </div>         
+    </div>
+  </section>
+  <!-- ==================End content body section=============== -->
+  
+
+<INCLURE{fond=inclure/footer} />
+
+
+  </div><!-- /.box_wrapper -->
+</div><!-- /.container -->
+<!-- jQuery Library -->
+<!-- jQuery Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+  <!-- For content animatin  -->
+  [<script src="(#CHEMIN{js/wow.min.js})" type="text/javascript"></script>]
+  <!-- bootstrap js file -->
+  [<script src="(#CHEMIN{js/bootstrap.min.js})" type="text/javascript"></script>]
+  <!-- slick slider js file -->
+  [<script src="(#CHEMIN{js/slick.min.js})" type="text/javascript"></script>]
+  <!-- news ticker jquery file -->
+  [<script src="(#CHEMIN{js/jquery.li-scroller.1.0.js})" type="text/javascript"></script>]
+    <!-- custom js file include -->
+  [<script src="(#CHEMIN{js/custom.js})" type="text/javascript"></script>]
+
+  <!-- =========================
+        //////////////This Theme Design and Developed //////////////////////
+        //////////// by www.wpfreeware.com======================-->
+    
+      
+  </body>
+</html>

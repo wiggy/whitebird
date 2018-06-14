@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    [<meta name="description" content="(#DESCRIPTIF_SITE_SPIP|couper{150}|attribut_html)" />]
+    <title>La Colombe du Jour</title>
+    <INCLURE{fond=inclure/head} />
+ 
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+<body>
+  
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+  <!-- End Preloader -->
+   
+  <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+  
+  <div class="container">
+    <div class="box_wrapper">
+       <!-- ==================start header=============== -->
+      <header id="header">     
+        <!-- start header top area -->
+        <div class="header_top">
+            <!-- Static navbar -->
+           <INCLURE{fond=inclure/nav,env} />
+         <div class="header_search">
+          <button id="searchIcon"><i class="fa fa-search"></i></button>
+           <!-- <a id="searchIcon" href="#"><i class="fa fa-search"></i></a> -->
+          <div id="shide">
+            <div id="search-hide">
+              <form action="spip.php?page=recherche" method="get">
+                <input name="page" value="recherche" type="hidden"
+/>
+              <input type="text" size="40" placeholder="Votre recherche ..." name="recherche">
+              </form>
+              <button class="remove"><span><i class="fa fa-times"></i></span></button>
+            </div>
+          </div>
+         </div>
+        </div>
+        <!-- End header top area -->
+
+        <!-- start header bottom area -->
+        <div class="header_bottom">
+          <div class="logo_area">
+
+          <!-- for your text logo -->
+            <a class="logo" href="#URL_SITE_SPIP">
+           [(#LOGO_SITE_SPIP|image_reduire{443,90})]
+          </a>
+            <h5>[(#SLOGAN_SITE_SPIP|textebrut)]</h5>
+          </div>
+          <div class="top_addarea">
+            <BOUCLE_banner(ARTICLES) {id_mot=10} {par date} {inverse} {0,1}>
+
+                  <a href="#URL_SITE">[(#LOGO_ARTICLE|image_reduire{728,*}||image_recadre{728,90,top})]</a>
+
+                  </BOUCLE_banner>
+          </div>
+        </div>
+        <!-- start header top area -->     
+      </header>   
+      <!-- ==================End header=============== -->
+      <!-- start news sticker -->
+      <div class="latest_newsarea">      
+        <span>Derniers articles</span>
+        <ul id="ticker01" class="news_sticker">
+        <BOUCLE_derniers(ARTICLES) {id_rubrique != 5} {par date} {inverse} {0,9}> 
+          <li><a href="#URL_ARTICLE">[(#TITRE|couper{50})]</a></li>
+        </BOUCLE_derniers>      
+        </ul>    
+      </div>
+    <!-- End news sticker -->
+
+
+  <!-- ==================start content body section=============== -->
+  <section id="contentbody">
+    <div class="row">
+    <!-- start left bar content -->
+         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+          <div class="row">
+            <div class="left_bar">
+            <!-- start single leftbar -->
+              <div class="single_leftbar">
+                <h2><span>Derniers articles</span></h2>
+                <div class="singleleft_inner">
+                  <ul class="recentpost_nav wow fadeInDown">
+                    <BOUCLE_derniers2(ARTICLES) {id_rubrique != 5} {par date} {inverse} {0,5}>
+                    <li>
+                      <a href="#URL_ARTICLE">[(#LOGO_ARTICLE_RUBRIQUE|image_reduire{150,*}||image_recadre{150,80,top})]</a>
+                      <a class="recent_title" href="single_page.html"> [(#TITRE)]</a>
+                      </li>
+                      </BOUCLE_derniers2>
+                  </ul>
+                </div>
+              </div>
+              <!-- start single leftbar -->
+              <div class="single_leftbar wow fadeInDown">
+                <h2><span>Publicité</span></h2>
+                <div class="singleleft_inner">
+                  <BOUCLE_sky(ARTICLES) {id_mot=11} {par date} {inverse} {0,1}>
+
+                  <a href="#URL_SITE">[(#LOGO_ARTICLE|image_reduire{150,600}||image_recadre{150,600,top})]</a>
+
+                  </BOUCLE_sky>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End left bar content -->
+
+      <!-- start left middlebar content -->
+      <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
+        <div class="row">
+          <div class="middle_bar">
+          <!-- start category archive area -->
+            <div class="category_archive_area">
+              <!-- start single category -->
+              <div class="single_archive wow fadeInDown">
+                <a href="single_page.html"><img src="http://lorempixel.com/650/310/people/1" alt="img"></a>
+                <a href="single_page.html" class="read_more">Lire... <i class="fa fa-angle-double-right"></i></a>
+                <div class="singlearcive_article">
+                  <h2><a href="single_page.html">Curabitur ac dictum nisl eu hendrerit ante</a></h2>
+                  <a class="author_name" href="#"><i class="fa fa-user"></i>La Rédaction</a>
+                  <a class="post_date" href="#"><i class="fa  fa-clock-o"></i>Lundi 4 Septembre 2017</a>
+                  <p>Duis vel libero eget turpis consectetur varius quis ut augue. Sed sed placerat mauris. Praesent cons...</p>
+                </div>
+              </div>
+               <!-- start single category -->
+              <div class="single_archive wow fadeInDown">
+                <a href="single_page.html"><img src="http://lorempixel.com/650/310/people/2" alt="img"></a>
+                <a href="single_page.html" class="read_more">Lire... <i class="fa fa-angle-double-right"></i></a>
+                <div class="singlearcive_article">
+                  <h2><a href="single_page.html">Curabitur ac dictum nisl eu hendrerit ante</a></h2>
+                  <a class="author_name" href="#"><i class="fa fa-user"></i>La Rédaction</a>
+                  <a class="post_date" href="#"><i class="fa  fa-clock-o"></i>Lundi 4 Septembre 2017</a>
+                  <p>Duis vel libero eget turpis consectetur varius quis ut augue. Sed sed placerat mauris. Praesent cons...</p>
+                </div>
+              </div>
+               <!-- start single category -->
+              <div class="single_archive wow fadeInDown">
+                <a href="single_page.html"><img src="http://lorempixel.com/650/310/people/3" alt="img"></a>
+                <a href="single_page.html" class="read_more">Lire... <i class="fa fa-angle-double-right"></i></a>
+                <div class="singlearcive_article">
+                  <h2><a href="#">Curabitur ac dictum nisl eu hendrerit ante</a></h2>
+                  <a class="author_name" href="#"><i class="fa fa-user"></i>La Rédaction</a>
+                  <a class="post_date" href="#"><i class="fa  fa-clock-o"></i>Lundi 4 Septembre 2017</a>
+                  <p>Duis vel libero eget turpis consectetur varius quis ut augue. Sed sed placerat mauris. Praesent cons...</p>
+                </div>
+              </div>
+               <!-- start single category -->
+              <div class="single_archive wow fadeInDown">
+                <a href="single_page.html"><img src="http://lorempixel.com/650/310/people/4" alt="img"></a>
+                <a href="single_page.html" class="read_more">Lire... <i class="fa fa-angle-double-right"></i></a>
+                <div class="singlearcive_article">
+                  <h2><a href="#">Curabitur ac dictum nisl eu hendrerit ante</a></h2>
+                  <a class="author_name" href="#"><i class="fa fa-user"></i>La Rédaction</a>
+                  <a class="post_date" href="#"><i class="fa  fa-clock-o"></i>Lundi 4 Septembre 2017</a>
+                  <p>Duis vel libero eget turpis consectetur varius quis ut augue. Sed sed placerat mauris. Praesent cons...</p>
+                </div>
+              </div>
+               <!-- start single category -->
+              <div class="single_archive wow fadeInDown">
+                <a href="#"><img src="http://lorempixel.com/650/310/people/5" alt="img"></a>
+                <a href="#" class="read_more">Lire... <i class="fa fa-angle-double-right"></i></a>
+                <div class="singlearcive_article">
+                  <h2><a href="#">Curabitur ac dictum nisl eu hendrerit ante</a></h2>
+                  <a class="author_name" href="#"><i class="fa fa-user"></i>La Rédaction</a>
+                  <a class="post_date" href="#"><i class="fa  fa-clock-o"></i>Lundi 4 Septembre 2017</a>
+                  <p>Duis vel libero eget turpis consectetur varius quis ut augue. Sed sed placerat mauris. Praesent cons...</p>
+                </div>
+              </div>
+
+
+
+              <!-- start category Autres articles -->
+              <div class="single_category wow fadeInDown">
+                <div class="category_title">
+                  <a href="#">Autres articles de la rubrique</a>
+                </div>
+                <div class="single_category_inner">
+                 <ul class="catg3_snav catg5_nav">
+                    <li>
+                      <div class="media">
+                        <a href="#" class="media-left">
+                          <img alt="img" src="http://lorempixel.com/70/70/abstract">
+                        </a>
+                        <div class="media-body">
+                          <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius</a>
+                           <div class="sing_commentbox">
+                            <p><i class="fa fa-calendar"></i>19 Sept 2017</p>
+                            <a href="#"><i class="fa fa-Commentaires"></i>20 Commentaires</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                     <li>
+                      <div class="media">
+                        <a href="#" class="media-left">
+                          <img alt="img" src="http://lorempixel.com/70/70/animals">
+                        </a>
+                        <div class="media-body">
+                          <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius</a>
+                           <div class="sing_commentbox">
+                            <p><i class="fa fa-calendar"></i>19 Sept 2017</p>
+                            <a href="#"><i class="fa fa-Commentaires"></i>20 Commentaires</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="media">
+                        <a href="#" class="media-left">
+                          <img alt="img" src="http://lorempixel.com/70/70/business">
+                        </a>
+                        <div class="media-body">
+                          <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius</a>
+                           <div class="sing_commentbox">
+                            <p><i class="fa fa-calendar"></i>19 Sept 2017</p>
+                            <a href="#"><i class="fa fa-Commentaires"></i>20 Commentaires</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="media">
+                        <a href="#" class="media-left">
+                          <img alt="img" src="http://lorempixel.com/70/70/cats">
+                        </a>
+                        <div class="media-body">
+                          <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius</a>
+                           <div class="sing_commentbox">
+                            <p><i class="fa fa-calendar"></i>19 Sept 2017</p>
+                            <a href="#"><i class="fa fa-Commentaires"></i>20 Commentaires</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="media">
+                        <a href="#" class="media-left">
+                          <img alt="img" src="http://lorempixel.com/70/70/city">
+                        </a>
+                        <div class="media-body">
+                          <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius</a>
+                           <div class="sing_commentbox">
+                            <p><i class="fa fa-calendar"></i>19 Sept 2017</p>
+                            <a href="#"><i class="fa fa-Commentaires"></i>20 Commentaires</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="media">
+                        <a href="#" class="media-left">
+                          <img alt="img" src="http://lorempixel.com/70/70/food">
+                        </a>
+                        <div class="media-body">
+                          <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius</a>
+                           <div class="sing_commentbox">
+                            <p><i class="fa fa-calendar"></i>19 Sept 2017</p>
+                            <a href="#"><i class="fa fa-Commentaires"></i>20 Commentaires</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div> <!-- Autres articles --> 
+
+
+
+            </div><!-- End category archive area -->
+
+          </div>
+        </div>
+      </div>
+      <!-- End left middlebar content -->
+
+       <!-- start left rightbar content -->
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+          <div class="row">
+            <div class="right_bar">
+              <!-- start Popular Post -->
+              <div class="single_leftbar wow fadeInDown">
+                <h2><span>Les plus populaires</span></h2>
+                <div class="singleleft_inner">
+                  <ul class="catg3_snav ppost_nav wow fadeInDown">
+                    <BOUCLE_pop(ARTICLES) {id_rubrique != 5} {par popularite} {inverse} {0,5}>
+
+                    <li>
+                      <div class="media">
+                        <a href="#URL_ARTICLE" class="media-left">
+                          [(#LOGO_ARTICLE_RUBRIQUE|image_reduire{*,70}||image_recadre{70,70,top})]
+                        </a>
+                        <div class="media-body">
+                          <a href="#URL_ARTICLE" class="catg_title"> [(#TITRE)]</a>                        
+                        </div>
+                      </div>
+                    </li>
+           
+</BOUCLE_pop>   
+                                        
+                  </ul>
+                </div>
+              </div>
+               <!-- End Popular Post --> 
+
+               <!-- start right bar add -->
+              <div class="single_leftbar wow fadeInDown">
+                <h2><span>Publicité</span></h2>
+                <div class="singleleft_inner">
+                 <BOUCLE_aside(ARTICLES) {id_mot=12} {par date} {inverse} {0,1}>
+
+                  <a href="#URL_SITE">[(#LOGO_ARTICLE|image_reduire{262,*}||image_recadre{262,218,top})]</a>
+
+                  </BOUCLE_aside>
+                </div>
+              </div>
+               <!-- End right bar add --> 
+
+               
+
+              <!-- start Labels -->
+              <div class="single_leftbar wow fadeInDown">
+                <h2><span>Mots-clés</span></h2>
+                <div class="singleleft_inner">
+                 <ul class="label_nav">
+
+
+<BOUCLE_mots1(MOTS) {id_mot < 8} {par num titre}>
+
+                   <li><a href="#URL_MOT">#TITRE</a></li>
+
+</BOUCLE_mots1>
+
+                 </ul>
+                </div>
+              </div>
+              <!-- End Labels --> 
+
+            </div>
+          </div>
+        </div>
+        <!-- End left rightbar content -->
+    </div>
+  </section>
+  <!-- ==================End content body section=============== -->
+  <INCLURE{fond=inclure/footer} />
+    </div><!-- /.box_wrapper -->
+  </div><!-- /.container -->
+
+<!-- jQuery Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+  <!-- For content animatin  -->
+  [<script src="(#CHEMIN{js/wow.min.js})" type="text/javascript"></script>]
+  <!-- bootstrap js file -->
+  [<script src="(#CHEMIN{js/bootstrap.min.js})" type="text/javascript"></script>]
+  <!-- slick slider js file -->
+  [<script src="(#CHEMIN{js/slick.min.js})" type="text/javascript"></script>]
+  <!-- news ticker jquery file -->
+  [<script src="(#CHEMIN{js/jquery.li-scroller.1.0.js})" type="text/javascript"></script>]
+    <!-- custom js file include -->
+  [<script src="(#CHEMIN{js/custom.js})" type="text/javascript"></script>]
+
+  <!-- =========================
+        //////////////This Theme Design and Developed //////////////////////
+        //////////// by www.wpfreeware.com======================-->
+    
+  </body>
+</html>

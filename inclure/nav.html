@@ -1,0 +1,24 @@
+<nav class="navbar navbar-default" role="navigation">
+
+<div class="container-fluid">
+
+<div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>             
+            </div>
+
+<div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav custom_nav">
+                [(#ENV{home,'non'}|=={oui}|?{<li class="on">, <li>})]<a href="#URL_SITE_SPIP">Accueil</a></li>
+        <BOUCLE_nav(RUBRIQUES) {racine} {par num titre, titre} {0,5}>     
+                <li[ class="(#EXPOSE)"]><a href="#URL_RUBRIQUE">#TITRE</a></li>
+		</BOUCLE_nav>
+              </ul>           
+            </div><!--/.nav-collapse -->
+
+</div><!--/.container-fluid -->
+        </nav>

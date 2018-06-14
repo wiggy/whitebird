@@ -1,0 +1,33 @@
+<div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                        <div class="row">
+                            <div class="left_bar">
+                                <!-- start single leftbar -->
+                                <div class="single_leftbar">
+                                    <h2><span>Derniers articles</span></h2>
+                                    <div class="singleleft_inner">
+                                        <ul class="recentpost_nav wow fadeInDown">
+                                            <BOUCLE_derniers2(ARTICLES) {id_rubrique =1 } {par date} {inverse} {0,5}>
+                                                <li>
+                                                    <a href="#URL_ARTICLE">[(#LOGO_ARTICLE_RUBRIQUE|image_reduire{150,*}||image_recadre{150,80,top})]</a>
+                                                    <a class="recent_title" href="#URL_ARTICLE"> [(#TITRE)]</a>
+                                                </li>
+                                                </BOUCLE_derniers2>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- start single leftbar -->
+                                <div class="single_leftbar wow fadeInDown">
+                                    <h2><span>Publicité</span></h2>
+                                    <div class="singleleft_inner">
+
+                                        <BOUCLE_sky(ARTICLES) {id_mot=11} {par date} {inverse} {0,1}>
+
+                                            <a href="#URL_SITE">[(#LOGO_ARTICLE|image_reduire{150,600}||image_recadre{150,600,top})]</a>
+
+                                            </BOUCLE_sky>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
