@@ -1,0 +1,143 @@
+<BOUCLE_principale(RUBRIQUES) {id_rubrique=1}>
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    [<meta name="description" content="(#INTRODUCTION{150}|attribut_html)" />]
+    <title>Journaux en PDF - [(#NOM_SITE_SPIP|textebrut)]</title>
+    
+    <INCLURE{fond=inclure/head} />
+ 
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+<body>
+  
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+  <!-- End Preloader -->
+   
+  <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+  
+  <div class="container">
+    <div class="box_wrapper">
+       <!-- ==================start header=============== -->
+      <header id="header">     
+        <!-- start header top area -->
+        <div class="header_top">
+            <!-- Static navbar -->
+           <INCLURE{fond=inclure/nav,env} />
+         
+
+
+  <!-- ==================start content body section=============== -->
+  <section id="contentbody">
+    <div class="row">
+    <!-- start left bar content -->
+         <INCLURE{fond=inclure/aside-left} />
+        <!-- End left bar content -->
+
+      <!-- start left middlebar content -->
+      <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
+        <div class="row">
+          <div class="middle_bar">
+          <!-- start category archive area -->
+            <div class="category_archive_area">
+ 
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- La colombe du jour -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:468px;height:60px"
+     data-ad-client="ca-pub-8766173723162582"
+     data-ad-slot="9243247664"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+              <!-- start category Autres articles -->
+              <div class="single_category wow fadeInDown">
+                <div class="category_title">
+                  <a href="#">Journaux en PDF</a>
+                </div>
+                <div class="single_category_inner">
+                 <ul class="catg3_snav catg5_nav">
+
+<B_pdfs>
+#ANCRE_PAGINATION
+
+<BOUCLE_pdfs(DOCUMENTS) {id_rubrique=1} {par date} {inverse} {pagination 6}>
+
+                    <li>
+                      <div class="media">
+                        <a href="#URL_DOCUMENT" class="media-left">
+                            [(#LOGO_DOCUMENT|image_reduire{262,*})]
+                        </a>
+                        <div class="media-body">
+                          <a href="#URL_DOCUMENT" class="catg_title">[(#TITRE|textebrut)]</a>
+                           <div class="sing_commentbox">
+                            <p><i class="fa fa-calendar"></i>[(#DATE|affdate)]</p>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                     
+</BOUCLE_pdfs>
+
+[<div class="page"><p class="pagination">(#PAGINATION)</p></div>]
+
+</B_pdfs>
+                  </ul>
+                </div>
+              </div> <!-- Autres articles --> 
+
+
+
+            </div><!-- End category archive area -->
+
+          </div>
+        </div>
+      </div>
+      <!-- End left middlebar content -->
+
+       <!-- start left rightbar content -->
+        <INCLURE{fond=inclure/aside-right} />
+        <!-- End left rightbar content -->
+    </div>
+  </section>
+  <!-- ==================End content body section=============== -->
+  <INCLURE{fond=inclure/footer} />
+    </div><!-- /.box_wrapper -->
+  </div><!-- /.container -->
+
+<!-- jQuery Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+  <!-- For content animatin  -->
+  [<script src="(#CHEMIN{js/wow.min.js})" type="text/javascript"></script>]
+  <!-- bootstrap js file -->
+  [<script src="(#CHEMIN{js/bootstrap.min.js})" type="text/javascript"></script>]
+  <!-- slick slider js file -->
+  [<script src="(#CHEMIN{js/slick.min.js})" type="text/javascript"></script>]
+  <!-- news ticker jquery file -->
+  [<script src="(#CHEMIN{js/jquery.li-scroller.1.0.js})" type="text/javascript"></script>]
+    <!-- custom js file include -->
+  [<script src="(#CHEMIN{js/custom.js})" type="text/javascript"></script>]
+
+  <!-- =========================
+        //////////////This Theme Design and Developed //////////////////////
+        //////////// by www.wpfreeware.com======================-->
+    
+  </body>
+</html>
+</BOUCLE_principale>
