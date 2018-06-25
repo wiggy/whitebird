@@ -51,52 +51,7 @@
                     <div class="header_top">
                         <!-- Static navbar -->
                         <INCLURE{fond=inclure/nav,env} />
-                        <div class="header_search">
-                            <button id="searchIcon"><i class="fa fa-search"></i></button>
-                            <!-- <a id="searchIcon" href="#"><i class="fa fa-search"></i></a> -->
-                            <div id="shide">
-                                <div id="search-hide">
-                                    <form action="spip.php?page=recherche" method="get">
-                                        <input name="page" value="recherche" type="hidden" />
-                                        <input type="text" size="40" placeholder="Votre recherche ..." name="recherche">
-                                    </form>
-                                    <button class="remove"><span><i class="fa fa-times"></i></span></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End header top area -->
-
-                    <!-- start header bottom area -->
-                    <div class="header_bottom">
-                        <div class="logo_area">
-                            <!-- for your image logo -->
-                            <a class="logo" href="#URL_SITE_SPIP">
-           [(#LOGO_SITE_SPIP|image_reduire{443,90})]
-          </a>
-                            <h5>[(#SLOGAN_SITE_SPIP|textebrut)]</h5>
-                        </div>
-                        <div class="top_addarea">
-                            <BOUCLE_banner(ARTICLES) {id_mot=10} {par date} {inverse} {0,1}>
-
-                                <a href="#URL_SITE">[(#LOGO_ARTICLE|image_reduire{728,*}||image_recadre{728,90,top})]</a>
-
-                                </BOUCLE_banner>
-                        </div>
-                    </div>
-                    <!-- start header top area -->
-                </header>
-                <!-- ==================End header=============== -->
-                <!-- start news sticker -->
-                <div class="latest_newsarea">
-                    <span>Derniers articles</span>
-                    <ul id="ticker01" class="news_sticker">
-                        <BOUCLE_derniers(ARTICLES) {id_rubrique =1 } {par date} {inverse} {0,9}>
-                            <li><a href="#URL_ARTICLE">[(#TITRE|couper{50})]</a></li>
-                            </BOUCLE_derniers>
-                    </ul>
-                </div>
-                <!-- End news sticker -->
+                        
 
                 <!-- ==================start content body section=============== -->
                 <section id="contentbody">

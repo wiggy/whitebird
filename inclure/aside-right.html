@@ -6,11 +6,13 @@
                                 <div class="single_leftbar wow fadeInDown">
                                     <h2><span>Le journal en PDF</span></h2>
                                     <div class="singleleft_inner">
+                                        
                                          <BOUCLE_pdf(DOCUMENTS) {id_rubrique=1} {par date} {inverse} {0,1}>
 
                                             <a href="#URL_DOCUMENT">[(#LOGO_DOCUMENT|image_reduire{262,*})]</a>
 
                                             </BOUCLE_pdf>
+                                        <center><a href="#URL_PAGE{journaux_pdf}">Autres numéros</a></center>
                                     </div>
                                 </div>
                                 <!-- End une PDF -->

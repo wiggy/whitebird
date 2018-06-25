@@ -14,7 +14,7 @@
 <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav custom_nav">
                 [(#ENV{home,'non'}|=={oui}|?{<li class="on">, <li>})]<a href="#URL_SITE_SPIP">Accueil</a></li>
-        <BOUCLE_nav(RUBRIQUES) {racine} {par num titre, titre} {0,5}>     
+        <BOUCLE_nav(RUBRIQUES) {racine} {par num titre, titre} {0,6}>     
                 <li[ class="(#EXPOSE)"]><a href="#URL_RUBRIQUE">#TITRE</a></li>
 		</BOUCLE_nav>
               </ul>           
@@ -22,3 +22,74 @@
 
 </div><!--/.container-fluid -->
         </nav>
+
+        <div class="header_search">
+          <button id="searchIcon"><i class="fa fa-search"></i></button>
+          <!-- <a id="searchIcon" href="#"><i class="fa fa-search"></i></a> -->
+          <div id="shide">
+              <div id="search-hide">
+                  <form action="spip.php?page=recherche" method="get">
+                      <input name="page" value="recherche" type="hidden" />
+                      <input type="text" size="40" placeholder="Votre recherche ..." name="recherche">
+                  </form>
+                  <button class="remove"><span><i class="fa fa-times"></i></span></button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- End header top area -->
+
+  <!-- start header bottom area -->
+  <div class="header_bottom">
+      <div class="logo_area">
+
+          <!-- for your text logo -->
+          <a class="logo" href="#URL_SITE_SPIP">
+[(#LOGO_SITE_SPIP|image_reduire{443,90})]
+</a>
+          <h5>[(#SLOGAN_SITE_SPIP|textebrut)]</h5>
+              Nombre total de visites :
+                                  <?php
+$query = "SELECT SUM(visites) AS total_absolu FROM spip_visites";
+$result = spip_query($query);
+
+if ($row = spip_fetch_array($result)) {
+$total_absolu = $row['total_absolu'];
+}
+
+
+$query = "SELECT COUNT(DISTINCT ip) AS visites FROM spip_visites_temp";
+$result = spip_query($query);
+
+if ($row = @spip_fetch_array($result)) {
+$visites_today = $row['visites'];
+}
+
+$total_gen = $total_absolu + $visites_today;
+
+echo "<strong>".$total_gen."</strong>";
+
+?>
+          
+      </div>
+      <div class="top_addarea">
+          <BOUCLE_banner(ARTICLES) {id_mot=10} {par date} {inverse} {0,1}>
+
+              <a href="#URL_SITE">[(#LOGO_ARTICLE|image_reduire{728,*}||image_recadre{728,90,top})]</a>
+
+              </BOUCLE_banner>
+      </div>
+  </div>
+  <!-- start header top area -->
+</header>
+<!-- ==================End header=============== -->
+<!-- start news sticker -->
+<div class="latest_newsarea">
+  <span>Derniers articles</span>
+  <ul id="ticker01" class="news_sticker">
+      <BOUCLE_derniers(ARTICLES) {id_rubrique =1 } {par date} {inverse} {0,9}>
+          <li><a href="#URL_ARTICLE">[(#TITRE|couper{50})]</a></li>
+          </BOUCLE_derniers>
+  </ul>
+</div>
+<!-- End news sticker -->
